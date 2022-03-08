@@ -83,7 +83,7 @@ public class Donjon {
         boolean trouver = false;
         Position voisin = p.clone();
         Configuration instance = Configuration.getInstance();
-        
+
         //pour toutes les directions
         i = Direction.obtenirDirAlea();
         while (!casesJeu[voisin.getI()][voisin.getJ()].estDeveloppe())
