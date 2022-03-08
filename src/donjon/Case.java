@@ -56,13 +56,9 @@ public class Case {
         this.developpe = deAlgoLaby;
     }
 
-    public void setVoisin(int direction) //Défini la position du voisin selon la position actuelle du joueur
+    public void setVoisin(int direction, Case voisin) //Défini la position du voisin selon la position actuelle du joueur
     {
-        Position voisinP = new Position(this.casePosition);
-
-        voisinP.additionnerPos(Direction.directionAPosition(direction));
-        voisin[direction] = new Case(voisinP);
-
+        this.voisin[direction] = voisin;
     }
 
     public Case getVoisin(int direction) //Accesseur (lecture) d'un voisin

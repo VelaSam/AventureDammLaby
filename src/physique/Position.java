@@ -49,11 +49,9 @@ public class Position
     }
 
     //Méthodes
-    public Position clone(Position p2) //Copie profonde
+    public Position clone() //Copie profonde
     {
-        this.i = p2.i;
-        this.j = p2.j;
-        return this;
+        return new Position(i,j);
     }
 
     public boolean equals(Object obj) //Comparaison profonde

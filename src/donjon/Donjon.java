@@ -81,20 +81,15 @@ public class Donjon {
 
         int i;
         boolean trouver = false;
-        Case aTester = new Case(p);
-        Case voisin = null;
-        Position copieVoisin;
+        Position voisin = p.clone();
         Configuration instance = Configuration.getInstance();
-
+        
         //pour toutes les directions
         i = Direction.obtenirDirAlea();
-        while (!trouver && this.getNbVoisinsNonDeveloppe(p) > 0)
+        while (!casesJeu[voisin.getI()][voisin.getJ()].estDeveloppe())
         {
-            aTester.setVoisin(i);
-            voisin = aTester.getVoisin(i);
-            copieVoisin = aTester.getCopiePosition();
-            if(copieVoisin.getI()>=0 && copieVoisin.getI()<instance.getConfig(Configuration.NB_LIGNES)
-                    && copieVoisin.getJ() >= 0 && copieVoisin.getJ() < instance.getConfig(Configuration.NB_COLONNES))
+            if(voisin.getI()>=0 && voisin.getI()<instance.getConfig(Configuration.NB_LIGNES)
+                    && voisin.getJ() >= 0 && voisin.getJ() < instance.getConfig(Configuration.NB_COLONNES))
             {
                 if(!voisin.estDeveloppe())
                 {
@@ -108,7 +103,7 @@ public class Donjon {
             }
         }
 
-        return voisin;
+        return aTester;
     }
 
 
